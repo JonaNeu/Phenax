@@ -1,0 +1,6 @@
+bin/
+dotOutput/
+sootOutput/
+*.log
+*.json
+.*_log

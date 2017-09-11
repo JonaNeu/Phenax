@@ -1,0 +1,13 @@
+digraph "<jf.andro.malcon15demo.BuildConfig: void <init>()>" {
+    label="void <init>()";
+    node [shape=box];
+    "0" [method=5307,key=455888635,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5307,key=1170788511,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN10\")",];
+    "0"->"1";
+    "2" [method=5307,key=1400973979,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"specialinvoke $r0.<java.lang.Object: void <init>()>()\")",];
+    "1"->"2";
+    "3" [method=5307,key=204322447,invoke_target="<java.lang.Object: void <init>()>",invoke_real="<java.lang.Object: void <init>()>",label="specialinvoke $r0.<init>()",];
+    "2"->"3";
+    "4" [method=5307,key=1019484860,style=filled,fillcolor=lightgray,label="return",];
+    "3"->"4";
+}

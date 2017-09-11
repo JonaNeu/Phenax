@@ -1,0 +1,27 @@
+digraph "<jf.andro.malcon15demo.MainActivity$2: void onClick(android.view.View)>" {
+    label="void onClick(android.view.View)";
+    node [shape=box];
+    "0" [method=5313,key=1129433283,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5313,key=1810518740,label="$r1 := @parameter0",];
+    "0"->"1";
+    "2" [method=5313,key=533415944,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN16\")",];
+    "1"->"2";
+    "3" [method=5313,key=183155105,label="$r2 = new android.content.Intent",];
+    "2"->"3";
+    "4" [method=5313,key=1089930529,label="$r4 = $r0.this$0",];
+    "3"->"4";
+    "5" [method=5313,key=2001115307,invoke_target="<jf.andro.malcon15demo.MainActivity: android.content.Context getApplicationContext()>",invoke_real="<jf.andro.malcon15demo.MainActivity: android.content.Context getApplicationContext()>",label="$r3 = $r4.getApplicationContext()",];
+    "4"->"5";
+    "6" [method=5313,key=1919834117,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"specialinvoke $r2.<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>($r3, class \\\"jf/andro/malcon15demo/Screen3\\\")\")",];
+    "5"->"6";
+    "7" [method=5313,key=1927963027,invoke_target="<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>",invoke_real="<android.content.Intent: void <init>(android.content.Context,java.lang.Class)>",label="specialinvoke $r2.<init>($r3, class \"jf/andro/malcon15demo/Screen3\")",];
+    "6"->"7";
+    "8" [method=5313,key=833240229,label="$r4 = $r0.this$0",];
+    "7"->"8";
+    "9" [method=5313,key=1086849943,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"virtualinvoke $r4.<jf.andro.malcon15demo.MainActivity: void startActivity(android.content.Intent)>($r2)\")",];
+    "8"->"9";
+    "10" [method=5313,key=1167088639,invoke_target="<jf.andro.malcon15demo.MainActivity: void startActivity(android.content.Intent)>",invoke_real="<jf.andro.malcon15demo.MainActivity: void startActivity(android.content.Intent)>",label="$r4.startActivity($r2)",];
+    "9"->"10";
+    "11" [method=5313,key=707531688,style=filled,fillcolor=lightgray,label="return",];
+    "10"->"11";
+}

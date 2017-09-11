@@ -1,0 +1,181 @@
+{
+    "packages_to_ignore": [
+        "android.support.v4",
+        "android.support.v7",
+        "android.support",
+        "com.google.android",
+        "org.apache.commons"
+    ],
+    "categories": [
+        {
+            "category": "binary",
+            "description": "Execution of binaries",
+            "classes": [
+                "java.lang.Runtime",
+                "java.lang.Process",
+                "java.lang.ProcessBuilder",
+                "java.lang.System",
+                "org.apache.commons.exec.*",
+                "org.apache.commons.launcher.*",
+                "android.os.Process"
+            ],
+            "grep": [],
+            "score": 6
+        },
+
+        {
+            "category": "dynamic",
+            "description": "Dynamic code loading",
+            "classes": [
+                "dalvik.system.BaseDexClassLoader",
+                "dalvik.system.PathClassLoader",
+                "dalvik.system.DexClassLoader",
+                "dalvik.system.DexFile"
+            ],
+            "grep": [],
+            "score": 8
+        },
+
+        {
+            "category": "crypto",
+            "description": "Cryptographic libraries",
+            "classes": [
+                "javax.crypto.*",
+                "java.security.spec.*",
+                "org.apache.commons.crypto.*"
+            ],
+            "grep": [
+                "encrypt",
+                "decrypt"
+            ],
+            "score": 3
+        },
+
+        {
+            "category": "network",
+            "description": "Remote connections",
+            "classes": [
+                "java.net.Socket",
+                "java.net.ServerSocket",
+                "java.net.HttpURLConnection",
+                "java.net.JarURLConnection",
+                "java.net.URL",
+                "org.apache.commons.net.*",
+                "org.apache.http.*",
+                "org.apache.commons.mail.*",
+                "android.webkit.*",
+                "java.net.ssl.*",
+                "java.net.HttpCookie",
+                "android.app.DownloadManager",
+                "android.net.Network",
+                "android.net.wifi.WifiManager"
+            ],
+            "grep": [],
+            "score": 3
+        },
+
+        {
+            "category": "telephony",
+            "description": "Telephony information (phone n°, IMEI, ...)",
+            "classes": [
+              "android.telephony.TelephonyManager"
+            ],
+            "grep": [],
+            "score": 15
+        },
+
+        {
+            "category": "sms",
+            "description": "SMS",
+            "classes": [
+              "android.telephony.SmsManager"
+            ],
+            "grep": [],
+            "score": 40
+        },
+
+        {
+            "category": "accounts",
+            "description": "Information about the accounts on the mobile",
+            "classes": [
+              "android.accounts.AccountManager"
+            ],
+            "grep": [],
+            "score": 5
+        },
+
+        {
+            "category": "bluetooth",
+            "description": "Bluetooth",
+            "classes": [
+              "android.bluetooth.BluetoothManager"
+            ],
+            "grep": [],
+            "score": 5
+        },
+
+        {
+            "category": "GPS",
+            "description": "gps",
+            "classes": [
+              "android.location.LocationManager",
+              "android.location.LocationProvider"
+            ],
+            "grep": [],
+            "score": 5
+        },
+
+        {
+            "category": "NFC",
+            "description": "nfc",
+            "classes": [
+              "android.nfc.NfcManager"
+            ],
+            "grep": [],
+            "score": 8
+        },
+
+        {
+            "category": "OS",
+            "description": "os",
+            "classes": [
+              "android.content.pm.PackageInstaller",
+              "android.os.PowerManager"
+            ],
+            "grep": [],
+            "score": 20
+        },
+
+        {
+            "category": "IO",
+            "description": "classes corresponding to input and output",
+            "classes": [
+              "java.io.DataInput",
+              "java.io.DataOutput"
+            ],
+            "grep": [],
+            "score": 2
+        },
+
+        {
+            "category": "Recording",
+            "description": "Recording",
+            "classes": [
+              "android.media.AudioRecord",
+              "android.media.MediaRecorder"
+            ],
+            "grep": [],
+            "score": 30
+        },
+
+        {
+            "category": "Display",
+            "description": "Display",
+            "classes": [
+              "android.hardware.display.DisplayManager"
+            ],
+            "grep": [],
+            "score": 10
+        }
+    ]
+}

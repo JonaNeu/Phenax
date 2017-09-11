@@ -1,0 +1,42 @@
+{
+    "tags": {
+        "all": {
+            "method": [
+                "BEGINN14",
+                "BEGINN16",
+                "BEGINN12",
+                "BEGINN13",
+                "BEGINN10",
+                "BEGINN8",
+                "BEGINN0",
+                "BEGINN9",
+                "BEGINN7",
+                "BEGINN6",
+                "BEGINN2",
+                "BEGINN5",
+                "BEGINN1",
+                "BEGINN11",
+                "BEGINN4",
+                "BEGINN15",
+                "BEGINN3"
+            ],
+            "cond": ["1"]
+        },
+        "seen": {
+            "method": ["1"],
+            "branch": ["1"]
+        }
+    },
+    "targeted": {
+        "target": "RS 100.0 (2 of type sms) in <jf.andro.malcon15demo.Screen2$2: void onClick(android.view.View)>",
+        "alert": "Alert at 790094605 (type: sms, RS: 50.0)",
+        "executed": [],
+        "num_executed": 1,
+        "num_targeted": 2,
+        "coverage": 3.0
+    },
+    "coverage": {
+        "method": 0.0,
+        "branch": 100.0
+    }
+}

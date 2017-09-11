@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="comment">false</item>
+    <item type="id" name="screen2">false</item>
+    <item type="id" name="screen3">false</item>
+    <item type="id" name="imageView">false</item>
+    <item type="id" name="textView">false</item>
+    <item type="id" name="radioButton1">false</item>
+    <item type="id" name="radioButton2">false</item>
+    <item type="id" name="radioButton3">false</item>
+    <item type="id" name="send">false</item>
+    <item type="id" name="textView2">false</item>
+</resources>

@@ -1,0 +1,73 @@
+#coding: utf8
+import networkx as nx
+import matplotlib.pyplot as plt
+import json
+from networkx.readwrite import json_graph
+
+#return a graph with serialized nodes and edges
+def serialize_graph(graph):
+    s_graph = nx.MultiDiGraph()
+    s_nodes = []
+    s_edges = []
+    for n in graph.nodes():
+        s_nodes.append(json.dumps(n))
+    for ((a,b,c),(d,e,f)) in graph.edges():
+        s_edges.append((json.dumps((a,b,c)),json.dumps((d,e,f))))
+    s_graph.add_nodes_from(s_nodes)
+    s_graph.add_edges_from(s_edges)
+    return s_graph
+
+#take a serialized graph and return the real one
+def deserialize_graph(s_graph):
+    graph = nx.MultiDiGraph()
+    nodes = []
+    edges = []
+    for n in s_graph.nodes():
+        nodes.append(tuple(json.loads(n)))
+    for (j,k) in s_graph.edges():
+        edges.append((tuple(json.loads(j)),tuple(json.loads(k))))
+    graph.add_nodes_from(nodes)
+    graph.add_edges_from(edges)
+    return graph
+
+T = nx.MultiDiGraph()
+noeuds = [('foo','foo',1),('foo','foo',2),('foo','foo',3),('foo','foo',4),('foo','foo',5),('foo','foo',6)]
+arretes = [(('foo','foo',1),('foo','foo',2)),(('foo','foo',2),('foo','foo',3)),(('foo','foo',2),('foo','foo',4)),(('foo','foo',2),('foo','foo',5)),(('foo','foo',2),('foo','foo',6))]
+T.add_nodes_from(noeuds)
+T.add_edges_from(arretes)
+T = serialize_graph(T)
+
+#T=nx.Graph([(1,2)])
+
+data = json_graph.node_link_data(T)
+
+# méthode string
+s = json.dumps(data)
+
+# méthode fichier
+with open('test.json', 'w') as f:
+    json.dump(data, f, indent=4)
+
+# récupération avec fichier
+with open('test.json', 'r') as f:
+    f_data = json.load(f)
+    f_graph = json_graph.node_link_graph(f_data)
+    nx.draw_networkx(f_graph)
+    plt.draw()
+    plt.savefig('f_test.png',dpi=150)
+    plt.clf()
+
+s_data = json.loads(s)
+s_graph = json_graph.node_link_graph(s_data)
+nx.draw_networkx(s_graph)
+plt.draw()
+plt.savefig('s_test.png',dpi=150)
+plt.clf()
+
+print 'FOR THE SERIALIZED GRAPH\n'
+print 'NODES: ', T.nodes()
+print '\nEDGES: ', T.edges()
+T = deserialize_graph(T)
+print 'FOR THE DESERIALIZED GRAPH\n'
+print 'NODES: ', T.nodes()
+print '\nEDGES: ', T.edges()

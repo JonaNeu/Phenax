@@ -1,0 +1,22 @@
+Mosts of the files in this directory are taken from elsewhere in the repository. This was made in order to keep the addings independent.
+
+The added files which contains our work are:
+    - algo.py
+    - logsConverter.py
+    - marguerites.py
+    - stats.py
+
+All those files are to use as an API. A test function is defined in each of it in order to see what typical use can be made (or have been made to test the implementation)
+
+* algo.py: contains algorithms to process graphs
+* logsConverter.py: allow to transform a log file into the wanted format and generate basic json for the graph information
+* marguerites.py: generates a json with marguerites information
+* stats.py: make agregation of the results from json files
+
+Generally, to add a new property that seem interessant (like marguerites) it is adviced to see how it is done in logsConverter.py and do the same. The basic architecture is to have 4 functions: two in order to serialize/deserialize your data and two in order to dump it into a json file or load it from the json file. To link two jsons from a same graph sample, you should work with dictionnaries like {'name':, 'directory':, 'new_property':}.
+
+When dumping a json file, it can be interessant to particularize the name. We called our files by appending '_graph.json' and '_marguerites.json'.
+
+CONTRIBUTORS:
+    - Jordan FREDJ
+    - Pierre GAGELIN

@@ -1,0 +1,82 @@
+{
+    "packages_to_ignore": [
+        "android.support.v4",
+        "android.support.v7",
+        "android.support",
+        "com.google.android",
+        "org.apache.commons"
+    ],
+    "categories": [
+        {
+            "category": "binary",
+            "description": "Execution of binaries",
+            "classes": [
+                "java.lang.Runtime",
+                "java.lang.Process",
+                "java.lang.System"
+            ],
+            "grep": [],
+            "score": 6
+        },
+
+        {
+            "category": "dynamic",
+            "description": "Dynamic code loading",
+            "classes": [
+                "dalvik.system.BaseDexClassLoader",
+                "dalvik.system.PathClassLoader",
+                "dalvik.system.DexClassLoader",
+                "dalvik.system.DexFile"
+            ],
+            "grep": [],
+            "score": 8
+        },
+
+        {
+            "category": "crypto",
+            "description": "Cryptographic libraries",
+            "classes": [
+                "javax.crypto.*",
+                "java.security.spec.*"
+            ],
+            "grep": [
+                "encrypt",
+                "decrypt"
+            ],
+            "score": 3
+        },
+
+        {
+            "category": "network",
+            "description": "Remote connections",
+            "classes": [
+                "java.net.Socket",
+                "java.net.ServerSocket",
+                "java.net.HttpURLConnection",
+                "java.net.JarURLConnection"
+            ],
+            "grep": [],
+            "score": 3
+        },
+
+        {
+            "category": "telephony",
+            "description": "Telephony information (phone n°, IMEI, ...)",
+            "classes": [
+              "android.telephony.TelephonyManager"
+            ],
+            "grep": [],
+            "score": 8
+        },
+
+        {
+            "category": "sms",
+            "description": "SMS",
+            "classes": [
+              "android.telephony.SmsManager"
+            ],
+            "grep": [],
+            "score": 50
+        }
+    ]
+}  

@@ -1,0 +1,27 @@
+digraph "<jf.andro.malcon15demo.Screen2$2: void onClick(android.view.View)>" {
+    label="void onClick(android.view.View)";
+    node [shape=box];
+    "0" [method=5326,key=544386226,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5326,key=900298796,label="$r1 := @parameter0",];
+    "0"->"1";
+    "2" [method=5326,key=312168418,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN8\")",];
+    "1"->"2";
+    "3" [method=5326,key=790094605,invoke_target="<android.telephony.SmsManager: android.telephony.SmsManager getDefault()>",invoke_real="<android.telephony.SmsManager: android.telephony.SmsManager getDefault()>",label="$r2 = android.telephony.SmsManager.getDefault()",];
+    "2"->"3";
+    "4" [method=5326,key=95369743,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"virtualinvoke $r2.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>(\\\"+33-666-666\\\", null, \\\"Evil sms !\\\", null, null)\")",];
+    "3"->"4";
+    "5" [method=5326,key=855700733,invoke_target="<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>",invoke_real="<android.telephony.SmsManager: void sendTextMessage(java.lang.String,null_type,java.lang.String,null_type,null_type)>",label="$r2.sendTextMessage(\"+33-666-666\", null, \"Evil sms !\", null, null)",];
+    "4"->"5";
+    "6" [method=5326,key=247162961,label="$r3 = $r0.this$0",];
+    "5"->"6";
+    "7" [method=5326,key=1890266440,invoke_target="<jf.andro.malcon15demo.Screen2: android.content.Context getApplicationContext()>",invoke_real="<jf.andro.malcon15demo.Screen2: android.content.Context getApplicationContext()>",label="$r4 = $r3.getApplicationContext()",];
+    "6"->"7";
+    "8" [method=5326,key=324112183,invoke_target="<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.CharSequence,int)>",invoke_real="<android.widget.Toast: android.widget.Toast makeText(android.content.Context,java.lang.String,int)>",label="$r5 = android.widget.Toast.makeText($r4, \"Sending SMS !\", 0)",];
+    "7"->"8";
+    "9" [method=5326,key=26928827,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"virtualinvoke $r5.<android.widget.Toast: void show()>()\")",];
+    "8"->"9";
+    "10" [method=5326,key=980364771,invoke_target="<android.widget.Toast: void show()>",invoke_real="<android.widget.Toast: void show()>",label="$r5.show()",];
+    "9"->"10";
+    "11" [method=5326,key=1233595751,style=filled,fillcolor=lightgray,label="return",];
+    "10"->"11";
+}

@@ -1,0 +1,11 @@
+digraph "<jf.andro.malcon15demo.BuildConfig: void <clinit>()>" {
+    label="void <clinit>()";
+    node [shape=box];
+    "0" [method=5306,key=1323531427,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",style=filled,fillcolor=gray,label="android.util.Log.i(\"JFL\", \"BEGINN9\")",];
+    "1" [method=5306,key=1640612861,invoke_target="<java.lang.Boolean: boolean parseBoolean(java.lang.String)>",invoke_real="<java.lang.Boolean: boolean parseBoolean(java.lang.String)>",label="$z0 = java.lang.Boolean.parseBoolean(\"true\")",];
+    "0"->"1";
+    "2" [method=5306,key=50503805,label="jf.andro.malcon15demo.BuildConfig.DEBUG = $z0",];
+    "1"->"2";
+    "3" [method=5306,key=1557989809,style=filled,fillcolor=lightgray,label="return",];
+    "2"->"3";
+}

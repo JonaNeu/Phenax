@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<hierarchy rotation="0">
+  <node index="0" text="" resource-id="" class="android.widget.FrameLayout" package="jf.andro.malcon15demo" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[0,0][1080,1776]">
+    <node index="0" text="This is a test app for Malcon15 !" resource-id="jf.andro.malcon15demo:id/comment" class="android.widget.TextView" package="jf.andro.malcon15demo" content-desc="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,123][647,180]" />
+    <node index="1" text="Go to Screen 2" resource-id="jf.andro.malcon15demo:id/screen2" class="android.widget.Button" package="jf.andro.malcon15demo" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,357][472,501]" />
+    <node index="2" text="Go to screen 3" resource-id="jf.andro.malcon15demo:id/screen3" class="android.widget.Button" package="jf.andro.malcon15demo" content-desc="" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" scrollable="false" long-clickable="false" password="false" selected="false" bounds="[48,501][467,645]" />
+  </node>
+</hierarchy>

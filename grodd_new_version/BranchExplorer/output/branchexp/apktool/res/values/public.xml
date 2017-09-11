@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="drawable" name="cheval" id="0x7f020000" />
+    <public type="mipmap" name="ic_launcher" id="0x7f030000" />
+    <public type="layout" name="activity_main" id="0x7f040000" />
+    <public type="layout" name="activity_screen2" id="0x7f040001" />
+    <public type="layout" name="activity_screen3" id="0x7f040002" />
+    <public type="dimen" name="activity_horizontal_margin" id="0x7f050000" />
+    <public type="dimen" name="activity_vertical_margin" id="0x7f050001" />
+    <public type="dimen" name="fab_margin" id="0x7f050002" />
+    <public type="string" name="app_name" id="0x7f060000" />
+    <public type="string" name="title_activity_screen2" id="0x7f060001" />
+    <public type="id" name="comment" id="0x7f070000" />
+    <public type="id" name="screen2" id="0x7f070001" />
+    <public type="id" name="screen3" id="0x7f070002" />
+    <public type="id" name="imageView" id="0x7f070003" />
+    <public type="id" name="textView" id="0x7f070004" />
+    <public type="id" name="radioButton1" id="0x7f070005" />
+    <public type="id" name="radioButton2" id="0x7f070006" />
+    <public type="id" name="radioButton3" id="0x7f070007" />
+    <public type="id" name="send" id="0x7f070008" />
+    <public type="id" name="textView2" id="0x7f070009" />
+</resources>

@@ -1,0 +1,23 @@
+digraph "<jf.andro.malcon15demo.Screen2$1: void onCheckedChanged(android.widget.CompoundButton,boolean)>" {
+    label="void onCheckedChanged(android.widget.CompoundButton,boolean)";
+    node [shape=box];
+    "0" [method=5322,key=792855998,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5322,key=1003755748,label="$r1 := @parameter0",];
+    "0"->"1";
+    "2" [method=5322,key=1805164661,label="$z0 := @parameter1",];
+    "1"->"2";
+    "3" [method=5322,key=1110195322,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN12\")",];
+    "2"->"3";
+    "4" [method=5322,key=777341499,label="$r2 = $r0.this$0",];
+    "3"->"4";
+    "5" [method=5322,key=2101527076,invoke_target="<jf.andro.malcon15demo.Screen2: android.view.View findViewById(int)>",invoke_real="<jf.andro.malcon15demo.Screen2: android.view.View findViewById(int)>",label="$r3 = $r2.findViewById(2131165192)",];
+    "4"->"5";
+    "6" [method=5322,key=1378497201,label="$r4 = (android.widget.Button) $r3",];
+    "5"->"6";
+    "7" [method=5322,key=404947798,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"virtualinvoke $r4.<android.widget.Button: void setEnabled(boolean)>($z0)\")",];
+    "6"->"7";
+    "8" [method=5322,key=892931811,invoke_target="<android.widget.Button: void setEnabled(boolean)>",invoke_real="<android.widget.Button: void setEnabled(boolean)>",label="$r4.setEnabled($z0)",];
+    "7"->"8";
+    "9" [method=5322,key=1577167234,style=filled,fillcolor=lightgray,label="return",];
+    "8"->"9";
+}

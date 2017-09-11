@@ -1,0 +1,165 @@
+#coding: utf8
+
+#This programm goal is to use a log directory and generate gpickles, graphs, jsons. In other words it transforms log file in the wanted format
+
+#We mixed the use with algo.py in order to add properties to each graph so that they can be added in json files for further processing
+
+#mainly for file and directory usage
+import os
+import glob
+
+#for graph use
+import networkx as nx
+import matplotlib.pyplot as plt
+
+#to use algo.py
+import algo
+
+#to serialize
+import json
+from networkx.readwrite import json_graph
+
+#returns a list of the gpickle files in the named directory
+def get_gpickle(directory):
+    return glob.glob(directory+'/*.gpickle')
+
+#returns a list of the log files in the named directory
+def get_log(directory):
+    return glob.glob(directory+'/*.log')
+
+#returns a list of the json files in the named directory
+def get_json(directory):
+    return glob.glob(directory+'/*.json')
+
+#create a gpickle file associated to each log of the directory
+#NOTE: this operation can be long for a well furnished directory
+def log_to_gpickle(directory):
+    logs = get_log(directory)
+    for l in logs:
+        os.system('./logToGpickle.sh '+l)
+
+#return a graph with serialized nodes and edges
+def serialize_graph(graph):
+    s_graph = nx.MultiDiGraph()
+    s_nodes = []
+    s_edges = []
+    for n in graph.nodes():
+        s_nodes.append(json.dumps(n))
+    for ((a,b,c),(d,e,f)) in graph.edges():
+        s_edges.append((json.dumps((a,b,c)),json.dumps((d,e,f))))
+    s_graph.add_nodes_from(s_nodes)
+    s_graph.add_edges_from(s_edges)
+    return s_graph
+
+#take a serialized graph and return the real one
+def deserialize_graph(s_graph):
+    graph = nx.MultiDiGraph()
+    nodes = []
+    edges = []
+    for n in s_graph.nodes():
+        nodes.append(tuple(json.loads(n)))
+    for (j,k) in s_graph.edges():
+        edges.append((tuple(json.loads(j)),tuple(json.loads(k))))
+    graph.add_nodes_from(nodes)
+    graph.add_edges_from(edges)
+    return graph
+
+#return a serialized marguerite
+#a marguerite has a node-tuple as heart, and two node-tuple lists as tails and petals
+def serialize_marguerite(marguerite):
+    s_marguerite={}
+    s_heart = marguerite['heart']
+    s_tail = marguerite['heart']
+
+#returns a list of dictionnaries containing each a graph, his name and directory
+"""
+#BE AWARE THE GRAPH IS FORMATED TO BE THEN JSON SERIALIZED.
+#TO RETRIEVE THE GRAPH YOU SHALL DESERIALIZE THEN USE node_link_graph() from json_graph
+"""
+def gpickle_to_graph(directory):
+    graph_list = []
+    logs = get_gpickle(directory)
+    for l in logs:
+        ls = l.split(directory)
+        name = ls[1].split('.tmp.gpickle')
+        graph = nx.MultiDiGraph()
+        graph = nx.read_gpickle(l)
+        graph_list.append({'graph': graph, 'directory': directory, 'name': name[0]})
+    return graph_list
+
+#draw a figure with a graph, saves it and clean the figure
+def graph_to_image(graph_list):
+    for dic in graph_list:
+        nx.draw_networkx(dic['graph'])
+        plt.draw()
+        name = dic['directory'] + dic['name'] + '.png'
+        plt.savefig(name,dpi=150)
+        plt.clf()
+
+#serialize a list of graphs in a json file for each graph
+"""
+#SAME PROBLEM WITH MARGUERITE AS LIST AREN'T A HASHABLE OBJECT
+#ONLY A JSON DUMP INTO STRING IS NECESSARY
+"""
+def graph_to_json(graph_list):
+    for dic in graph_list:
+        graph = serialize_graph(dic['graph'])
+        graph = json_graph.node_link_data(graph)
+        graph = json.dumps(graph)
+        #marguerite = algo.marguerites(dic['graph'])
+        #marguerite = serialize_marguerite(marguerite)
+        data={}
+        data['graph']=graph
+        data['directory']=dic['directory']
+        data['name']=dic['name']
+        #data['marguerite']=marguerite
+        filename = dic['directory'] + dic['name'] + '.json'
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=4)
+
+#deserialize all json files from a directory and return a graph_list
+def json_to_graph(directory):
+    graph_list = []
+    jsons = get_json(directory)
+    for filename in jsons:
+        with open(filename, 'r') as f:
+            data = json.load(f)
+            graph = json.loads(data['graph'])
+            graph = json_graph.node_link_graph(graph)
+            graph = deserialize_graph(graph)
+            directory = data['directory']
+            name = data['name']
+            graph_list.append({'graph': graph, 'directory': directory, 'name': name})
+    return graph_list
+
+#function only to test the others, each test separated by a blanc line
+#can be used to see a typical use of each function
+def test():
+    #worked
+    #l = get_log('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #g = get_gpickle('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #print 'list of logs (',len(l),'):\n',l
+    #print 'list of gpickles (',len(g),'):\n',g
+
+    #worked
+    #log_to_gpickle('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+
+    #worked
+    #graph_list, directory = gpickle_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #graph_to_image(graph_list, directory)
+
+    #worked
+    #graph_list = gpickle_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    #graph_to_json(graph_list)
+
+    graph_list = json_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    for g in graph_list:
+        print '\nPRINTING GRAPH: '
+        print 'DIRECTORY: ', g['directory']
+        print 'NAME: ', g['name']
+        print 'GRAPH NODES: ', g['graph'].nodes()
+        print 'GRAPH EDGES: ', g['graph'].edges()
+
+test()
+
+

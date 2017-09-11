@@ -1,0 +1,17 @@
+digraph "<jf.andro.malcon15demo.MainActivity$1: void <init>(jf.andro.malcon15demo.MainActivity)>" {
+    label="void <init>(jf.andro.malcon15demo.MainActivity)";
+    node [shape=box];
+    "0" [method=5308,key=350069300,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5308,key=1957078537,label="$r1 := @parameter0",];
+    "0"->"1";
+    "2" [method=5308,key=226690498,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN13\")",];
+    "1"->"2";
+    "3" [method=5308,key=594858858,label="$r0.this$0 = $r1",];
+    "2"->"3";
+    "4" [method=5308,key=1455204443,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"specialinvoke $r0.<java.lang.Object: void <init>()>()\")",];
+    "3"->"4";
+    "5" [method=5308,key=1423016050,invoke_target="<java.lang.Object: void <init>()>",invoke_real="<java.lang.Object: void <init>()>",label="specialinvoke $r0.<init>()",];
+    "4"->"5";
+    "6" [method=5308,key=352776719,style=filled,fillcolor=lightgray,label="return",];
+    "5"->"6";
+}

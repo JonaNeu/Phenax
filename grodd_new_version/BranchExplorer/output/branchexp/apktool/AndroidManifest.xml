@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="jf.andro.malcon15demo" platformBuildVersionCode="23" platformBuildVersionName="6.0-2166767">
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <application android:allowBackup="true" android:debuggable="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:supportsRtl="true" android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        <activity android:name="jf.andro.malcon15demo.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:exported="true" android:label="@string/title_activity_screen2" android:name="jf.andro.malcon15demo.Screen2"/>
+        <activity android:name="jf.andro.malcon15demo.Screen3"/>
+    </application>
+</manifest>

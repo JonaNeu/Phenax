@@ -1,0 +1,14 @@
+To build a SFG use logconverter.py. The option --help will display
+information about how to use the tool.
+
+To analyse logs and detect any malicious execution traces use
+detection.py
+
+We use 4 spaces instead of tab in the python code. Please follow the
+same rule if you want to edit the code.
+
+Some packages that are needed in order to use this code
+networkx
+python-ply
+python-lxml
+pydot

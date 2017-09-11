@@ -1,0 +1,5 @@
+In method <jf.andro.malcon15demo.Screen2$2: void onClick(android.view.View)>
+	sms (RS 50.0): "android.telephony.SmsManager" in instruction: $r2 = staticinvoke <android.telephony.SmsManager: android.telephony.SmsManager getDefault()>() (line 32,-1)
+	sms (RS 50.0): "android.telephony.SmsManager" in instruction: virtualinvoke $r2.<android.telephony.SmsManager: void sendTextMessage(java.lang.String,java.lang.String,java.lang.String,android.app.PendingIntent,android.app.PendingIntent)>("+33-666-666", null, "Evil sms !", null, null) (line 33,-1)
+Method risk score: 100.0
+

@@ -1,0 +1,31 @@
+BranchExplorer and ForceCFI requires the different android.jar from
+the Android SDK to work. These files are provided by the Android SDK
+and are located in <your_android_sdk_dir>/platforms/android-*/ . 
+There is one directory for each version of Android. 
+
+AUTOMATIC INSTALL
+=================
+
+Use the provided script that will update all SDK versions and link them from this directory:
+
+python3 update-sdk-and-links.py
+
+MANUAL INSTALL
+==============
+You need to copy the android-* directories in this one (AndroidPlatforms) to make
+BranchExplorer and ForceCFI work. They only need the android-*/android.jar
+files so you can skip the other files. 
+
+If you do not want to have duplicate files on your system, you can also
+create symbolic files pointing to each one of the android-* directories.
+
+At the end you should have something such as below in this directory. Each one
+of these android-* directories contain an android.jar file. 
+
+RESULT
+======
+
+$ ls AndroidPlatforms/
+android-10 android-13 android-16 android-19 android-3  android-6  android-9
+android-11 android-14 android-17 android-20 android-4  android-7
+android-12 android-15 android-18 android-21 android-5  android-8

@@ -1,0 +1,19 @@
+digraph "<jf.andro.malcon15demo.Screen3: void onCreate(android.os.Bundle)>" {
+    label="void onCreate(android.os.Bundle)";
+    node [shape=box];
+    "0" [method=5328,key=1558079303,style=filled,fillcolor=gray,label="$r0 := @this",];
+    "1" [method=5328,key=58488213,label="$r1 := @parameter0",];
+    "0"->"1";
+    "2" [method=5328,key=708613859,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL\", \"BEGINN4\")",];
+    "1"->"2";
+    "3" [method=5328,key=365625031,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"specialinvoke $r0.<android.app.Activity: void onCreate(android.os.Bundle)>($r1)\")",];
+    "2"->"3";
+    "4" [method=5328,key=1632497828,invoke_target="<android.app.Activity: void onCreate(android.os.Bundle)>",invoke_real="<android.app.Activity: void onCreate(android.os.Bundle)>",label="specialinvoke $r0.onCreate($r1)",];
+    "3"->"4";
+    "5" [method=5328,key=1531200408,invoke_target="<android.util.Log: int i(java.lang.String,java.lang.String)>",invoke_real="<android.util.Log: int i(java.lang.String,java.lang.String)>",label="android.util.Log.i(\"JFL-AL\", \"virtualinvoke $r0.<jf.andro.malcon15demo.Screen3: void setContentView(int)>(2130968578)\")",];
+    "4"->"5";
+    "6" [method=5328,key=764826684,invoke_target="<jf.andro.malcon15demo.Screen3: void setContentView(int)>",invoke_real="<jf.andro.malcon15demo.Screen3: void setContentView(int)>",label="$r0.setContentView(2130968578)",];
+    "5"->"6";
+    "7" [method=5328,key=1940055334,style=filled,fillcolor=lightgray,label="return",];
+    "6"->"7";
+}

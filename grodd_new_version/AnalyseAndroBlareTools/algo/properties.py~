@@ -1,0 +1,51 @@
+#coding: utf8
+
+#This file purpose is to add the concept of marguerites to the information collected in a graph
+
+import logsConverter as lc
+import algo
+
+def test():
+    #worked
+    #l = get_log('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #g = get_gpickle('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #print 'list of logs (',len(l),'):\n',l
+    #print 'list of gpickles (',len(g),'):\n',g
+
+    #worked
+    #log_to_gpickle('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+
+    #worked
+    #graph_list, directory = gpickle_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/log/')
+    #graph_to_image(graph_list, directory)
+
+    #worked
+    #graph_list = gpickle_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    #graph_to_json(graph_list)
+
+    #worked
+    #graph_list = json_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    #for g in graph_list:
+    #    print '\nPRINTING GRAPH: '
+    #    print 'DIRECTORY: ', g['directory']
+    #    print 'NAME: ', g['name']
+    #    print 'GRAPH NODES: ', g['graph'].nodes()
+    #    print 'GRAPH EDGES: ', g['graph'].edges()
+
+    #worked
+    graph_list = lc.json_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    i = 1
+    for g in graph_list:
+        print 'generating marguerites of graph (', i, '/', len(graph_list), ')'
+        g['marguerites'] = algo.marguerites(g['graph'])
+        i += 1
+    lc.graph_to_json(graph_list)
+
+    #worked
+    #graph_list = json_to_graph('/home/tr4ckt3r/Documents/Projet3A/BlareLogs/simple_cond/')
+    #for g in graph_list:
+    #    print 'GRAPH FROM JSON FILE'
+    #    for m in g['marguerites']:
+    #        algo.print_marguerite(m)
+
+test()
