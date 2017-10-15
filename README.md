@@ -23,7 +23,7 @@ The installation of GroddDroid is described on http://kharon.gforge.inria.fr/gro
 
 ## Built With
 
-* [GroddDRoid](http://kharon.gforge.inria.fr/grodddroid.html) - The framework used to find and trigger malicious parts within an Android application
+* [GroddDroid](http://kharon.gforge.inria.fr/grodddroid.html) - The framework used to find and trigger malicious parts within an Android application
 
 ## Contributing
 
